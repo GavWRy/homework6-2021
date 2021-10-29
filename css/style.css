@@ -20,7 +20,9 @@ body{
     align-items: center;
     flex-direction: column;
     justify-content: center;
-    
+    animation-name: header_animation;
+    animation-duration: 5s;
+    animation-iteration-count: 1;
   }
   .nav_links{
     display: flex;
@@ -47,7 +49,7 @@ body{
   }
   
   .card {
-    min-width: 450px;
+    flex-basis: 450px;
   }
 
 
@@ -62,8 +64,13 @@ body{
     align-items: center;
     justify-content: center;
     flex-direction: row;
-    
+  }
 
+  @keyframes header_animation {
+    0%  {width: 50px;}
+    0%  {opacity: 0;}
+    100%  {width: 425px;}
+    100% {opacity: 1;}
   }
 
   @media screen and (min-width: 850px){
@@ -84,7 +91,8 @@ body{
         min-width: 250px;
       }
     header{
-        position:static;
+        position: sticky;
+        top: 0;
         display: flex;
         align-items: center;
         flex-direction: row;
@@ -96,5 +104,18 @@ body{
         justify-content: space-between;
         flex-direction: row;
       }
+      
   
+}
+@media screen and (prefers-reduced-motion: reduce){
+    /*Turn off scroll*/
+    html{
+        scroll-behavior: auto; /* Removes scroll animation */
+    }
+  
+    /*Turn off transition*/
+    .skip a{
+      -webkit-transition: initial; /* sets to default setting */
+      transition: initial; /* sets to default setting */
+    }
 }
