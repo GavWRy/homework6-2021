@@ -118,4 +118,10 @@ body{
       -webkit-transition: initial; /* sets to default setting */
       transition: initial; /* sets to default setting */
     }
+
+    img#logo{
+        animation-name: header_animation;
+        animation-duration: 0;
+        animation-iteration-count: 0;
+      }
 }
